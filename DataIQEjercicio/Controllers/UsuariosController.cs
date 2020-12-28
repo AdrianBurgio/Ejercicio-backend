@@ -60,7 +60,7 @@ namespace DataIQEjercicio.Controllers
         }
 
         /// <summary>
-        /// Insetar un usuario nuevo
+        /// Insetar un usuario nuevo (username:solo letras [a-z] / telefono: solo numeros [0-9])
         /// </summary>
         /// <param name="usuario"></param>
         /// <returns></returns>
@@ -75,7 +75,7 @@ namespace DataIQEjercicio.Controllers
         }
 
         /// <summary>
-        /// Modificar usuario por Id
+        /// Modificar usuario por Id (username:solo letras [a-z] / telefono: solo numeros [0-9])
         /// </summary>
         /// <param name="id"></param>
         /// <param name="usu"></param>
