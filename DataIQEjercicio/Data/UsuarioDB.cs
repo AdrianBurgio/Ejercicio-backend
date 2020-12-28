@@ -31,10 +31,10 @@ namespace DataIQEjercicio.Data
         //    return _usuariosCollection.Find(usu => true).ToList();
         //}
 
-        public Usuario GetById(string id)
+        public async Task<Usuario> GetByIdAsync(string id)
         {
             // para que se pueda compar el id con == hay que hacer el arreglo en la clase usuario [BsonRepresentation(BsonType.ObjectId)]
-            return _usuariosCollection.Find<Usuario>(usuario => usuario.Id == id).FirstOrDefault();
+            return await _usuariosCollection.Find<Usuario>(usuario => usuario.Id == id).FirstOrDefaultAsync();
         }
 
         public Usuario Create(Usuario usu)

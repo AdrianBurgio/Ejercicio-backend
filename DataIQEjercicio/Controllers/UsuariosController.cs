@@ -49,9 +49,9 @@ namespace DataIQEjercicio.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id:length(24)}", Name = "GetUsuario")]
-        public IActionResult GetById(string id)
+        public async Task<IActionResult> GetByIdA(string id)
         {
-            var usuario = _usuarioDB.GetById(id);
+            var  usuario = await _usuarioDB.GetByIdAsync(id);
             if (usuario == null)
             {
                 return NotFound();
