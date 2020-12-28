@@ -83,7 +83,7 @@ namespace DataIQEjercicio.Controllers
         [HttpPut("{id:length(24)}")]
         public IActionResult Update(string id, Usuario usu)
         {
-            var cliente = _usuarioDB.GetById(id);
+            var cliente = _usuarioDB.GetByIdAsync(id);
             if (cliente == null)
             {
                 return NotFound();
@@ -99,9 +99,9 @@ namespace DataIQEjercicio.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("{id:length(24)}")]
-        public IActionResult DeleteById(string id)
+        public async Task<IActionResult> DeleteById(string id)
         {
-            var usuario = _usuarioDB.GetById(id);
+            var usuario = await _usuarioDB.GetByIdAsync(id);
 
             if (usuario == null)
             {
